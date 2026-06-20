@@ -1,4 +1,5 @@
 from fastapi import FastAPI
+from fastapi.staticfiles import StaticFiles
 from database import Base, engine
 import models
 from routes import restaurants, auth

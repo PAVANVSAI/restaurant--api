@@ -9,3 +9,8 @@ Base.metadata.create_all(bind=engine)
 
 app.include_router(restaurants.router)
 app.include_router(auth.router)
+app.mount("/static", StaticFiles(directory="static"), name="static")
+
+@app.get("/")
+def home():
+    return FileResponse("static/index.html")
